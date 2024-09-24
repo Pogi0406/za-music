@@ -1,0 +1,6 @@
+export const actions = {
+  SET_TRACKS_DATA: "SET_TRACKS_DATA",
+  TOGGLE_PLAY: "TOGGLE_PLAY",
+  NEXT_SONG: "NEXT_SONG",
+  PREV_SONG: "PREV_SONG",
+};
