@@ -1,10 +1,11 @@
+import { PLAYER_HEIGHT } from "common/constants";
 import { SubText, Text } from "components/ui/Typography";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  height: 105px;
+  height: ${PLAYER_HEIGHT}px;
   background-color: ${({ theme }) => theme.colors.secondaryBlack};
   position: fixed;
   bottom: 0;

@@ -42,4 +42,7 @@ export const PlayButton = styled.button`
   &:hover {
     opacity: 0.8;
   }
+  &:disabled {
+    opacity: 0.6;
+  }
 `;
