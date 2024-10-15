@@ -19,8 +19,7 @@ function Home() {
     const loadData = async () => {
       try {
         setIsLoading(true);
-        const chart = await loadCharts();
-        const radio = await loadTopTracks();
+        const [chart, radio] = await Promise.all([loadCharts(), loadTopTracks()]);
         setChart(chart);
         setRadio(radio);
       } catch (err) {

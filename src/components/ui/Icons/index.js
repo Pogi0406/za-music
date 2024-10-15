@@ -53,7 +53,7 @@ const RightArrow = styled(LeftArrowIcon)`
 
 const Like = styled(LikeIcon)`
   stroke: ${(props) => props.color || "white"};
-  fill: ${(props) => props.color || "none"};
+  fill: ${(props) => props.color};
 `;
 
 const Search = styled(SearchIcon)`

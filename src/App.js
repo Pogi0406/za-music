@@ -2,7 +2,7 @@ import { ThemeProvider } from "styled-components";
 import { ErrorBoundary } from "react-error-boundary";
 import { theme } from "./styles/Theme";
 import { initialState, playerReducer } from "context/playerReducer";
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { PlayerContext, PlayerDispatchContext } from "context/playerContext";
 import Home from "pages/Home";
 import { GlobalStyles } from "styles/Global";
@@ -19,9 +19,13 @@ import { Route, Routes } from "react-router-dom";
 import Layout from "components/Layout";
 import Search from "pages/Home/Search";
 import Error from "pages/Error";
+import { setStorageValue } from "services/localStorage";
 
 function App() {
   const [state, dispatch] = useReducer(playerReducer, initialState);
+  useEffect(() => {
+    setStorageValue("savedTrackIds", state.savedTrackIds);
+  }, [state.savedTrackIds]);
   return (
     <PlayerContext.Provider value={state}>
       <PlayerDispatchContext.Provider value={dispatch}>
