@@ -1,4 +1,5 @@
 import { ThemeProvider } from "styled-components";
+import { ErrorBoundary } from "react-error-boundary";
 import { theme } from "./styles/Theme";
 import { initialState, playerReducer } from "context/playerReducer";
 import { useReducer } from "react";
@@ -30,13 +31,15 @@ function App() {
             highlightColor={theme.colors.lightWhite}
           >
             <GlobalStyles />
-            <Routes>
-              <Route path="/" element={<Layout />}>
-                <Route index element={<Home />} />
-                <Route path="/search" element={<Search />} />
-                <Route path="*" element={<Error />} />
-              </Route>
-            </Routes>
+            <ErrorBoundary fallback={<Error isErrorPage />}>
+              <Routes>
+                <Route path="/" element={<Layout />}>
+                  <Route index element={<Home />} />
+                  <Route path="/search" element={<Search />} />
+                  <Route path="*" element={<Error />} />
+                </Route>
+              </Routes>
+            </ErrorBoundary>
             <ToastContainer
               position="bottom-left"
               autoClose={5000}
