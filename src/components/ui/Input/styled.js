@@ -11,7 +11,7 @@ export const StyledInput = styled.input`
   border-radius: 25px;
   padding: 17px 54px;
   border: 2px solid ${({ theme }) => theme.colors.black};
-  background-image: ${(props) => `url(${props.startIcon})`};
+  background-image: ${(props) => `url(${props.icon})`};
   background-repeat: no-repeat;
   background-position: 17px 21px;
 
