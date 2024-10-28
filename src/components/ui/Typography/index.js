@@ -61,11 +61,6 @@ export const SmallText = styled.span`
   font-weight: ${({ theme }) => theme.fontWeights.normal};
   font-size: 18px;
   line-height: 22px;
-
-  ${device.md} {
-    font-size: 18px;
-    line-height: 22px;
-  }
 `;
 
 export const ButtonText = styled.span`

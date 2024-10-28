@@ -23,11 +23,17 @@ function Artists({ isLoading, artists }) {
                 width={isMobileLayout ? 75 : 95}
                 circle
                 wrapper={ArtistsSkeletonWrapper}
+                style={{ margin: "0 auto" }}
               />
               <Skeleton height={isMobileLayout ? 19 : 27} />
             </ArtistLoaderWrapper>
           ))}
-        <Swiper slidesPerView="auto" spaceBetween={20} modules={[Pagination]}>
+        <Swiper
+          slidesPerView="auto"
+          spaceBetween={20}
+          modules={[Pagination]}
+          style={{ marginLeft: 0 }}
+        >
           {!isLoading &&
             artists?.map((artist) => (
               <SwiperSlide key={artist.id} style={{ width: "auto" }}>
