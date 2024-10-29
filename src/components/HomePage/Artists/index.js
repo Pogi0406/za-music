@@ -7,6 +7,7 @@ import { Wrapper, ArtistsWrapper, ArtistsSkeletonWrapper, ArtistLoaderWrapper } 
 import ArtistCard from "./ArtistCard";
 import { useWindowSize } from "hooks/useWindowSize";
 import { breakpoints } from "styles/BreakPoints";
+import { Link } from "react-router-dom";
 
 function Artists({ isLoading, artists }) {
   const { width } = useWindowSize();
@@ -37,7 +38,9 @@ function Artists({ isLoading, artists }) {
           {!isLoading &&
             artists?.map((artist) => (
               <SwiperSlide key={artist.id} style={{ width: "auto" }}>
-                <ArtistCard name={artist.name} image={artist.picture_medium} />
+                <Link to={`/artists/${artist.id}`}>
+                  <ArtistCard name={artist.name} image={artist.picture_medium} />
+                </Link>
               </SwiperSlide>
             ))}
         </Swiper>

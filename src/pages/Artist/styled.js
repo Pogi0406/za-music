@@ -5,7 +5,7 @@ import { device } from "styles/BreakPoints";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 90px;
+  gap: 35px;
   padding-top: 52px;
   padding-bottom: calc(${PLAYER_HEIGHT}px + 50px);
 
@@ -13,7 +13,6 @@ export const Wrapper = styled.div`
     padding-bottom: calc(${MOBILE_PLAYER_HEIGHT}px + 50px);
   }
   ${device.md} {
-    gap: 45px;
     padding-top: 28px;
   }
 `;
@@ -21,7 +20,11 @@ export const Wrapper = styled.div`
 export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 12px;
+
+  ${device.md} {
+    gap: 5px;
+  }
 `;
 
 export const SongsCountWrapper = styled.div`
@@ -29,4 +32,30 @@ export const SongsCountWrapper = styled.div`
   align-items: center;
   gap: 12px;
   color: ${({ theme }) => theme.colors.secondaryGray};
+`;
+
+export const ArtistImageLoaderWrapper = styled.div`
+  display: flex;
+`;
+
+export const ArtistInfoWrapper = styled.div`
+  display: flex;
+  gap: 50px;
+
+  ${device.md} {
+    gap: 15px;
+    flex-direction: column;
+  }
+`;
+
+export const ArtistImage = styled.img`
+  width: 350px;
+  height: 350px;
+  border-radius: 25px;
+  object-fit: cover;
+
+  ${device.md} {
+    width: 100%;
+    height: 176px;
+  }
 `;
