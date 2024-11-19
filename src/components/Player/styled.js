@@ -16,8 +16,9 @@ export const Wrapper = styled.div`
   z-index: ${({ theme }) => theme.zIndex["30"]};
 
   ${device.lg} {
-    height: ${(props) =>
-      props.open ? `calc(100vh - ${MOBILE_HEADER_HEIGHT}px)` : `${MOBILE_PLAYER_HEIGHT}px`};
+    /* height: ${(props) =>
+      props.open ? `calc(100vh - ${MOBILE_HEADER_HEIGHT}px)` : `${MOBILE_PLAYER_HEIGHT}px`}; */
+    height: ${(props) => (props.open ? "100svh" : `${MOBILE_PLAYER_HEIGHT}px`)};
     border-top-right-radius: ${(props) => (props.open ? 0 : "25px")};
     border-top-left-radius: ${(props) => (props.open ? 0 : "25px")};
   }
@@ -65,6 +66,11 @@ export const BigTrackImage = styled.img`
   height: 311px;
   border-radius: 10px;
   margin: 0 auto 37px;
+
+  ${device.md} {
+    width: 180px;
+    height: 180px;
+  }
 `;
 
 export const TrackTitle = styled(Text)`

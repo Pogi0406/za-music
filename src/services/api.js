@@ -72,10 +72,8 @@ export async function loadArtist(artistId) {
       axios.get(`${API_ALL_ARTISTS_URL}/${artistId}`),
       axios.get(`${API_ALL_ARTISTS_URL}/${artistId}/top`),
     ]);
-    console.log(artistData, "artistData");
-    console.log(tracksData, "tracksData");
 
-    //if (!artistData?.data || !tracksData?.data?.data) throw Error();
+    if (!artistData?.data || !tracksData?.data?.data) throw Error();
 
     return {
       artist: artistData.data,

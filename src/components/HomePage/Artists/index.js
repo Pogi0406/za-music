@@ -17,7 +17,7 @@ function Artists({ isLoading, artists }) {
       <ArtistsWrapper>
         {isLoading &&
           [...Array(8).keys()].map((num) => (
-            <ArtistLoaderWrapper key={SVGAnimatedNumber}>
+            <ArtistLoaderWrapper key={num}>
               <Skeleton
                 key={num}
                 height={isMobileLayout ? 75 : 95}
